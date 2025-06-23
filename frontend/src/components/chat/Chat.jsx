@@ -28,7 +28,7 @@ const Chat = () => {
   }
 
   return (
-    <div className="border-1 w-64 bg-[#274c77] rounded-lg">
+    <div className="w-64 bg-[#fff] rounded-lg">
       <ul className="flex flex-col gap-2 p-2">
         { historial.map((mensaje, index) => (
           <li key={index}>
@@ -36,16 +36,16 @@ const Chat = () => {
           </li>
         ))}
       </ul>
-      <div className="p-2 border-t-1">
-        <div className="flex gap-2 bg-[#6096ba] text-white placeholder-gray-50 rounded-xl">
+      <div className="p-2">
+        <div className="flex gap-2 bg-[#fff] border-2 border-gray-300 rounded-xl">
           <input 
             type="text" 
             placeholder="Escribe un mensaje" 
-            className="flex-1 min-w-0 px-2" 
+            className="flex-1 min-w-0 px-2 outline-none" 
             value={mensaje} 
             onChange={e => setMensaje(e.target.value)}/>
           <button 
-            className={`py-2 px-3 rounded-xl hover:cursor-pointer text-[#274c77] ${isLoading && 'bg-gray-[#a3cef1] hover:bg-gray-[#a3cef1]'}`} 
+            className={`py-2 pr-2 rounded-xl hover:cursor-pointer text-[#274c77] ${isLoading && 'bg-gray-[#a3cef1] hover:bg-gray-[#a3cef1]'}`} 
             onClick={() => mandarMensaje(mensaje)} 
             disabled={isLoading || mensaje.trim() === ""}
           >
