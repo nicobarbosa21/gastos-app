@@ -28,10 +28,17 @@ const Gasto = (props) => {
       <td className="px-4 py-2">{props.categoria_id}</td>
       <td className="px-4 py-2">{props.fecha}</td>
       <td className="px-4 py-2 flex gap-2">
-        <button className="bg-blue-500 text-white px-3 py-1 rounded" onClick={handleOpenModal}>Editar</button>
-        <button className="bg-red-500 text-white px-3 py-1 rounded" onClick={() => props.handleDelete(props.id)}>Eliminar</button>
+        <button className="bg-[#1a4558] text-white px-3 py-1 rounded" 
+          onClick={handleOpenModal}>Editar</button>
+        <button className="bg-[#d43b43] text-white px-3 py-1 rounded" 
+          onClick={() => props.handleDelete(props.id)}>Eliminar</button>
       </td>
-      <EditGastoModal open={openModal} gasto={gasto} onClose={onCloseModal} handleEdit={props.handleEdit}/>
+      <EditGastoModal 
+        open={openModal} 
+        gasto={gasto} 
+        onClose={onCloseModal} 
+        handleEdit={props.handleEdit}
+      />
     </tr>
   )
 }

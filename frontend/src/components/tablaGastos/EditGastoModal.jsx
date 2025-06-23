@@ -10,7 +10,7 @@ const EditGastoModal = ({ open, onClose, gasto, handleEdit }) => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg">
         <h2 className="text-xl font-bold mb-4">Editar Gasto</h2>
         <form className="flex flex-col gap-4">
@@ -56,11 +56,11 @@ const EditGastoModal = ({ open, onClose, gasto, handleEdit }) => {
             Cancelar
           </button>
           <button
-            className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600"
+            className="px-4 py-2 rounded bg-[#1a4558] text-white hover:bg-[#2d414a]"
             onClick={() => {
               // Aquí podrías manejar la lógica para editar el gasto
               console.log('Gasto editado:', { monto, descripcion, fecha, categoria_id });
-              handleEdit(gasto.id, { id: gasto.id , monto, descripcion, fecha, categoria_id });
+              handleEdit({ id: gasto.id , monto, descripcion, fecha, categoria_id });
               onClose();
             }}
             type="button"
