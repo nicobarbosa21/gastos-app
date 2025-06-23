@@ -47,7 +47,7 @@ def prompt_costos():
 
     Debes poder interpretar la categoria del gasto que se te envie, para esto tenemos definidas las siguientes categorias:
 
-    Salud
+    {Salud
     Incluye todos los gastos relacionados con el cuidado médico y el bienestar físico o mental. Esto abarca consultas médicas, odontológicas, sesiones de psicología, estudios clínicos y pagos de obras sociales o medicina prepaga.
 
     Farmacia
@@ -124,21 +124,23 @@ def prompt_costos():
 
     Otros / Varios
     Gastos difíciles de clasificar o esporádicos, como multas, trámites o gastos no recurrentes que no encajan en otras categorías.
-
+    }
+    
     En todos los casos debes preguntar primero al usuario si la categoria y el gasto son correctas, una vez que el usuario confirme, guardas el gasto.
     Si la categoria no está clara o no está entre las opciones, se coloca en "Otros / Varios", pero de todas formas debes preguntar al usuario si la categoria es correcta.
 
-    Cuando un usuario ingresa el gasto que hizo, debes interpretar el mensaje como json y ese json guardarlo en la lista de gastos, la cual estará en el orquestador.
-    el json debe tener la siguiente estructura:
+    Cuando un usuario menciona un gasto, debés interpretar el mensaje y construir un objeto JSON con los siguientes campos, en este orden:
 
-    {   
-        "fecha": "YYYY-MM-DD",
+    {
+        "descripcion": str,
         "monto": float,
-        "categoria": str,
-        "descripcion": str
+        "fecha": "YYYY-MM-DD",
+        "categoria": str
     }
 
-    Por cada input del usuario se almacena en el historial de la sesion, de modo que puedas hacer referencia a mensajes anteriores si es necesario.
+    No debés mostrar este JSON al usuario. En su lugar, respondé con una frase natural que le pregunte si quiere confirmar el gasto
+
+    Recordá que el historial de la conversación está disponible y podés usarlo para interpretar correcciones o aclaraciones del usuario sobre el mismo gasto.
     """
 
 def prompt_reporte():
