@@ -1,0 +1,59 @@
+# === Python backend ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg-info/
+*.egg
+*.log
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+*.env
+.env.*
+
+# Archivos de configuración locales
+*.sqlite3
+.DS_Store
+.vscode/
+.idea/
+
+# === Node.js frontend ===
+node_modules/
+dist/
+build/
+.cache/
+.npm/
+.npmrc
+
+# Archivos de lock (dependencias)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# === Sistemas de control de versiones ===
+*.orig
+
+# === Archivos del sistema operativo ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Archivos temporales y de prueba ===
+*.swp
+*.bak
+*.tmp
+*.log
+*.coverage
+.coverage.*
+
+# === Archivos de testing o cobertura ===
+.coverage
+htmlcov/
+.tox/
+pytest_cache/
